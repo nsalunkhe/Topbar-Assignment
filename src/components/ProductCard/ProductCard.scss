@@ -1,0 +1,56 @@
+@use '../../index.scss' as scss;
+
+.product-card {
+	width: 270px;
+	min-width: 200px;
+	color: scss.$font-brown;
+
+	.product-image {
+		width: 100%;
+		margin-bottom: 16px;
+		border-radius: 10px;
+		height: 290px;
+		object-fit: cover;
+	}
+
+	.title-cart {
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+
+		.product-cart {
+			padding: 4px 8px;
+			background-color: scss.$accent-orange;
+			color: white;
+			font-weight: 500;
+			border-radius: 4px;
+		}
+	}
+	.product-price {
+		.mrp {
+			text-decoration: line-through;
+			margin-right: 4px;
+		}
+		.base {
+			color: scss.$accent-orange;
+		}
+		.quantity {
+			font-weight: 300;
+		}
+	}
+
+	@include scss.mobile {
+		width: 200px;
+
+		.title-cart {
+			.product-cart {
+				padding: 2px 6px;
+			}
+		}
+
+		.product-image {
+			height: 145px;
+			margin-bottom: 4px;
+		}
+	}
+}

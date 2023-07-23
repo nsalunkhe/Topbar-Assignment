@@ -1,0 +1,61 @@
+@use '../../index.scss' as scss;
+
+.related-products {
+	&.margins {
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+
+	.font-36 {
+		text-align: center;
+		font-weight: 600;
+		color: scss.$font-brown;
+		margin-bottom: 14px;
+	}
+	.font-16 {
+		text-align: center;
+		font-weight: 400;
+		color: scss.$font-gray;
+	}
+
+	.related-cards {
+		display: flex;
+		padding: 20px scss.$standard-padding;
+		gap: 36px;
+		padding-bottom: 4px;
+
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+
+		@include scss.hideScrollbar;
+
+		.product-card {
+			min-width: 300px;
+		}
+	}
+
+	.view-more {
+		display: block;
+		width: max-content;
+		margin: auto;
+		color: scss.$font-brown;
+		padding: 8px;
+		text-decoration: none;
+		border-bottom: 1px solid scss.$font-brown;
+	}
+
+	@include scss.tablet {
+		&.margins {
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+		.related-cards {
+			gap: 24px;
+			padding: 20px scss.$standard-padding-mobile;
+
+			.product-card {
+				min-width: 200px;
+			}
+		}
+	}
+}

@@ -1,0 +1,115 @@
+@use '../../index.scss' as scss;
+
+.filters {
+	background-color: scss.$accent-pink-lighter;
+	padding: 35px scss.$standard-padding;
+	display: flex;
+	justify-content: space-between;
+	color: scss.$font-brown;
+	font-weight: 400;
+	gap: 12px;
+
+	.catagory-filter-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		max-width: 500px;
+
+		.catagory-filter {
+			display: flex;
+			gap: 28px;
+			position: relative;
+
+			.catagory-filter-item {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				background-color: transparent;
+				border: none;
+				font-weight: 400;
+				color: inherit;
+			}
+		}
+	}
+	.sorting-filter-container {
+		display: flex;
+		gap: 28px;
+
+		.sorting-filter-item {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			position: relative;
+
+			.filter-input {
+				padding: 12px 18px;
+				color: scss.$font-gray;
+				border: none;
+				width: max-content;
+				background-color: white;
+
+				&[type='number'] {
+					width: 60px;
+				}
+			}
+		}
+	}
+	.filter-options {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 90px;
+
+		background-color: scss.$accent-pink-dark;
+		padding: 16px;
+		border-radius: 10px;
+		-webkit-box-shadow: -1px 8px 16px -8px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: -1px 8px 16px -8px rgba(0, 0, 0, 0.75);
+		box-shadow: -1px 8px 16px -8px rgba(0, 0, 0, 0.75);
+
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 0px;
+			left: 20%;
+			top: 10px;
+			border: 15px solid transparent;
+			border-top: 0;
+			border-bottom: 15px solid scss.$accent-pink-dark;
+			transform: translate(-20%, calc(-100% - 5px));
+		}
+
+		.option {
+			padding: 10px;
+			min-width: 220px;
+			text-align: center;
+			background-color: inherit;
+			border: none;
+			font-weight: 500;
+			color: scss.$font-brown;
+			border-bottom: 2px solid white;
+		}
+
+		@include scss.tablet {
+			top: 60px;
+			left: 24% !important;
+			&::after {
+				left: unset;
+				right: 30%;
+			}
+		}
+	}
+
+	@include scss.tablet {
+		padding: 22px scss.$standard-padding-mobile;
+		.catagory-filter-container {
+			max-width: 100%;
+			.catagory-filter {
+				width: 100%;
+				justify-content: center;
+			}
+		}
+	}
+}

@@ -1,0 +1,122 @@
+@use '../../index.scss' as scss;
+
+.testimonials-container {
+	padding: 100px 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-image: url(../../assets/images/sweets-background.png);
+	background-size: cover;
+	overflow: hidden;
+	position: relative;
+
+	&::after {
+		content: '';
+		width: 180px;
+		height: 100%;
+
+		background: linear-gradient(to left, white, transparent);
+		position: absolute;
+		right: 0px;
+		top: 0;
+	}
+	&::before {
+		content: '';
+		width: 180px;
+		height: 100%;
+
+		background: linear-gradient(to right, white, transparent);
+		position: absolute;
+		left: 0px;
+		top: 0;
+		z-index: 97;
+	}
+
+	.font-36 {
+		color: scss.$font-back;
+
+		text-align: center;
+		font-weight: 600;
+		margin-bottom: 28px;
+	}
+
+	.testimonials {
+		padding: 60px scss.$standard-padding;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		flex-wrap: nowrap;
+		gap: 40px;
+
+		overflow: scroll;
+		@include scss.hideScrollbar();
+
+		.card {
+			scroll-snap-align: center;
+			border-radius: 8px;
+			background-color: rgba($color: #ffff, $alpha: 0.6);
+			min-width: 400px;
+			padding: 24px 30px;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			position: relative;
+			box-shadow: -2px -2px 50px 0px rgba(0, 0, 0, 0.25);
+
+			img {
+				position: absolute;
+				border-radius: 50%;
+				width: 118px;
+				height: 118px;
+				top: -59px;
+			}
+
+			.font-16 {
+				color: scss.$font-brown;
+				margin-top: 44px;
+			}
+			.font-18 {
+				color: scss.$accent-orange;
+				margin-top: 24px;
+			}
+			.font-20 {
+				color: scss.$font-back2;
+				margin-top: 8px;
+			}
+		}
+
+		& > button {
+			position: absolute;
+			z-index: 98;
+			height: 30px;
+		}
+
+		#prev {
+			transform: rotateY(180deg);
+			left: 30px;
+		}
+		#next {
+			right: 30px;
+		}
+	}
+	@include scss.tablet {
+		padding: 60px 0;
+
+		&::after,
+		&::before {
+			width: 80px;
+		}
+
+		.testimonials {
+			@include scss.scrollbars(2px, 100px);
+
+			.card {
+				min-width: 300px;
+			}
+		}
+	}
+}

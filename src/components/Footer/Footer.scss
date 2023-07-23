@@ -1,0 +1,103 @@
+@use '../../index.scss' as scss;
+
+footer {
+	background-color: scss.$accent-pink-light;
+	padding: 78px scss.$standard-padding;
+	border-radius: 0 0 5px 5px;
+
+	@include scss.tablet {
+		padding: 42px scss.$standard-padding-mobile;
+	}
+
+	& > .logo {
+		margin-bottom: 16px;
+		img {
+			width: 94px;
+		}
+	}
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid #d9d9d9;
+		padding-bottom: 22px;
+
+		gap: 32px;
+		font-size: 16px;
+
+		@include scss.tablet {
+			& > * {
+				font-size: 10px;
+			}
+		}
+
+		& > * {
+			flex: 1;
+		}
+
+		.logo {
+			display: flex;
+			flex-direction: column;
+			gap: 18px;
+
+			& > img {
+				width: 114px;
+			}
+
+			& > .address {
+				color: scss.$font-gray;
+			}
+		}
+		.title {
+			margin-bottom: 55px;
+			color: scss.$font-gray;
+
+			@include scss.tablet {
+				margin-bottom: 10px;
+				color: scss.$font-brown;
+				font-weight: 700;
+			}
+		}
+		.links {
+			display: flex;
+			flex-direction: column;
+		}
+		.link {
+			margin-bottom: 46px;
+			color: scss.$font-brown;
+			text-decoration: none;
+
+			@include scss.tablet {
+				margin-bottom: 8px;
+			}
+		}
+
+		.news {
+			.news-form {
+				display: flex;
+				gap: 10px;
+
+				.news-custom-input {
+					padding: 0;
+
+					border: none;
+					border-bottom: 1px solid scss.$font-brown;
+					border-radius: 0;
+					min-width: 220px;
+				}
+
+				& > button {
+					background-color: transparent;
+					border: none;
+					border-bottom: 1px solid scss.$font-brown;
+					border-radius: 0;
+					color: scss.$font-brown;
+				}
+			}
+		}
+	}
+	.rights {
+		padding-top: 34px;
+		color: scss.$font-brown;
+	}
+}

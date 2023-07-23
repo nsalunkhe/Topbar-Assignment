@@ -1,0 +1,32 @@
+@use '../../index.scss' as scss;
+
+.custom-button {
+	@extend .font-16;
+	padding: 10px 28px;
+	border-radius: 8px;
+	border: 1px solid scss.$font-brown;
+	background: #fff;
+
+	text-align: center;
+	color: scss.$font-brown;
+	width: max-content;
+
+	&.full-width {
+		width: 100% !important;
+	}
+
+	.loading {
+		width: 20px;
+		transform: scale(2);
+		margin-bottom: -2px;
+	}
+
+	@include scss.mobile {
+		padding: 7px 12px;
+
+		.loading {
+			transform: scale(1.1);
+			margin-bottom: -4px;
+		}
+	}
+}

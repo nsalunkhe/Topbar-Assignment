@@ -1,0 +1,46 @@
+@use '../../index.scss' as scss;
+
+.footer-services {
+	padding: 96px scss.$standard-padding;
+	background-color: scss.$accent-pink;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	color: scss.$font-brown;
+	overscroll-behavior-x: contain;
+	scroll-snap-type: x mandatory;
+
+	scroll-behavior: smooth;
+
+	@include scss.hideScrollbar();
+
+	.service-desc {
+		color: scss.$font-gray;
+	}
+
+	& > button {
+		position: absolute;
+		z-index: 98;
+	}
+
+	#prev {
+		transform: rotateY(180deg);
+		left: 10px;
+	}
+	#next {
+		right: 10px;
+	}
+
+	@include scss.tablet {
+		padding: 0 scss.$standard-padding-mobile;
+		overflow: scroll;
+
+		.footer-service {
+			padding: 44px;
+			min-width: 100vw;
+			scroll-snap-align: center;
+		}
+	}
+}

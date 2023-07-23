@@ -1,0 +1,57 @@
+@use '../../index.scss' as scss;
+
+.bread-crumbs {
+	display: flex;
+	gap: 6px;
+
+	> img {
+		width: 20px;
+	}
+	.bread-crumb-item {
+		color: scss.$font-brown;
+		text-decoration: none;
+	}
+	.bread-crumb-item:not(:nth-last-child(2)) {
+		font-weight: 500;
+	}
+	.bread-crumb-item:nth-last-child(2) {
+		font-weight: 300;
+	}
+
+	&.last-item-container {
+		padding-top: 38px;
+		padding-bottom: 38px;
+		padding-left: scss.$standard-padding;
+
+		.bread-crumb-item {
+			color: scss.$font-gray;
+		}
+		.bread-crumb-item:not(:nth-last-child(2)) {
+			font-weight: 400;
+		}
+		.bread-crumb-item:nth-last-child(2) {
+			font-weight: 400;
+		}
+		.last-item {
+			padding-left: 24px;
+			margin-left: 24px;
+			border-left: 2px solid scss.$font-gray;
+			font-weight: 400;
+			color: scss.$font-brown;
+		}
+	}
+
+	@include scss.tablet {
+		gap: 4px;
+
+		&.last-item-container {
+			padding-top: 18px;
+			padding-bottom: 18px;
+			padding-left: scss.$standard-padding-mobile;
+		}
+
+		> img {
+			width: 14px;
+		}
+	}
+}

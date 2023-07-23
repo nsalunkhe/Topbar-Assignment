@@ -1,0 +1,21 @@
+@use '../../index.scss' as scss;
+
+.product-detailed-desc {
+	padding: 48px scss.$standard-padding;
+
+	.font-36 {
+		text-align: center;
+		font-weight: 600;
+		color: scss.$font-brown;
+		margin-bottom: 32px;
+	}
+	.font-16 {
+		text-align: center;
+		font-weight: 400;
+		color: scss.$font-gray;
+	}
+
+	@include scss.tablet {
+		padding: 32px scss.$standard-padding-mobile;
+	}
+}

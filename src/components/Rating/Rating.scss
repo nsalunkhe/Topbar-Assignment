@@ -1,0 +1,57 @@
+@use '../../index.scss' as scss;
+
+.product-rating {
+	display: flex;
+	align-items: center;
+	margin-top: 18px;
+
+	.star-rating {
+		display: flex;
+		gap: 4px;
+		.star {
+			display: block;
+			cursor: pointer;
+			transition: color 0.3s;
+			margin-bottom: -4px;
+
+			&.filled {
+				& > * {
+					fill: #ffda5b;
+				}
+			}
+
+			&.half-filled {
+				position: relative;
+				& > * {
+					fill: #ffda5b;
+				}
+
+				&:before {
+					content: '';
+					position: absolute;
+					// top: 0;
+					left: 50%;
+					width: 20px;
+					background-color: white;
+					height: 100%;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+	.rating-number {
+		color: scss.$font-gray;
+		margin-left: 22px;
+		padding-left: 22px;
+		border-left: 1px solid scss.$font-gray;
+	}
+
+	@include scss.tablet {
+		margin-top: 14px;
+
+		.rating-number {
+			margin-left: 14px;
+			padding-left: 14px;
+		}
+	}
+}

@@ -1,0 +1,89 @@
+@use '../../index.scss' as scss;
+
+.deals2-container {
+	background-color: scss.$accent-gold;
+	// background-image: url(../../assets/images/sweet-bowls.png);
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position-y: -10px;
+	padding: 50px scss.$standard-padding;
+
+	.deals {
+		display: flex;
+		color: scss.$font-brown;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		gap: 60px;
+
+		.deals-text {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+			text-align: right;
+			align-items: flex-end;
+
+			.font-36 {
+				font-weight: 700;
+				color: white;
+			}
+
+			.custom-button {
+				border: none;
+				background-color: scss.$accent-orange;
+				color: white;
+			}
+		}
+
+		.related-cards {
+			padding: 32px 0;
+
+			> .product-card {
+				min-width: 200px;
+
+				background-color: white;
+				padding: 7px;
+				border-radius: 8px;
+
+				.title-cart {
+					.product-cart {
+						padding: 2px 6px;
+					}
+				}
+
+				.product-image {
+					height: 200px;
+					margin-bottom: 4px;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 1130px) {
+		padding: scss.$standard-padding-mobile;
+		background-size: 80%;
+		padding: 32px 0;
+
+		.deals {
+			flex-direction: column-reverse;
+
+			gap: 24px;
+
+			.deals-text {
+				align-items: center;
+				padding: 0 scss.$standard-padding-mobile;
+				> * {
+					text-align: center;
+				}
+			}
+
+			.related-cards {
+				padding: 0 scss.$standard-padding-mobile;
+
+				> .product-card {
+					min-width: 240px;
+				}
+			}
+		}
+	}
+}

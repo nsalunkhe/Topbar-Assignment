@@ -1,0 +1,14 @@
+@use '../../index.scss' as scss;
+
+.product-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	row-gap: 45px;
+	column-gap: 30px;
+	padding: 90px scss.$standard-padding;
+
+	@include scss.tablet {
+		padding: 40px scss.$standard-padding-mobile;
+	}
+}

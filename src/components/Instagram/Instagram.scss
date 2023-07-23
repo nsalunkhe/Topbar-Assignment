@@ -1,0 +1,26 @@
+@use '../../index.scss' as scss;
+
+.instagram {
+	padding: 60px;
+	color: scss.$font-brown;
+
+	background-image: url(../../assets/images/instagram.png);
+	background-size: cover;
+	background-position: center;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	.font-42 {
+		font-weight: 700;
+		margin-top: 12px;
+	}
+
+	.custom-button {
+		background-color: scss.$accent-gold;
+		color: white;
+		border: none;
+		margin-top: 12px;
+	}
+}

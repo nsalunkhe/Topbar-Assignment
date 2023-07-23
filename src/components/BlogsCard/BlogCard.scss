@@ -1,0 +1,65 @@
+@use '../../index.scss' as scss;
+
+.blog-card {
+	color: scss.$font-brown;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 400px;
+
+	& > * {
+		text-align: center;
+	}
+
+	> img {
+		border-radius: 10px;
+		margin-bottom: 28px;
+		height: 330px;
+		overflow: hidden;
+		object-fit: cover;
+	}
+
+	.view-more {
+		display: block;
+		color: inherit;
+		font-weight: 500;
+		padding: 2px;
+		text-decoration: none;
+		width: max-content;
+		border-bottom: 1px solid scss.$font-brown;
+	}
+
+	.blog-details {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		gap: 14px;
+		padding: 8px 20px;
+
+		.blog-details-item {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+
+			.font-14 {
+				font-weight: 300;
+				min-width: max-content;
+			}
+
+			> img {
+				width: 14px;
+			}
+		}
+	}
+
+	@include scss.font-breakpoint {
+		min-width: 100vw;
+		padding: 0 scss.$standard-padding-mobile;
+
+		> img {
+			border-radius: 6px;
+			width: 70vw;
+			height: 50vw;
+		}
+	}
+}

@@ -1,0 +1,56 @@
+@use '../../index.scss' as scss;
+
+.custom-input-container {
+	position: relative;
+
+	&.label-on-top {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.custom-input {
+		padding: 24px 28px;
+		border-radius: 10px;
+		border: 1px solid scss.$font-gray;
+		background: #fff;
+		// font-size: 16px;
+
+		&::placeholder {
+			color: scss.$font-gray;
+			font-weight: 400;
+		}
+	}
+	.custom-input-label {
+		color: scss.$font-brown;
+
+		&.custom-input-required {
+			&::after {
+				content: '*';
+				color: red;
+				margin-left: 4px;
+			}
+		}
+	}
+
+	.custom-input-error {
+		position: absolute;
+		font-size: 10px;
+		color: red;
+		top: 100%;
+	}
+
+	.red-border {
+		border-color: red;
+	}
+
+	@include scss.mobile {
+		&.label-on-top {
+			gap: 8px;
+		}
+
+		.custom-input {
+			padding: 15px 18px;
+		}
+	}
+}

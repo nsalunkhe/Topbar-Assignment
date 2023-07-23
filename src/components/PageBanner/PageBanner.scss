@@ -1,0 +1,32 @@
+@use '../../index.scss' as scss;
+
+.page-banner {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-image: url('../../assets/images/page-banner.png');
+	padding: 50px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: scss.$font-brown;
+
+	& > * {
+		max-width: max-content;
+	}
+
+	.page-banner-logo {
+		width: 114px;
+	}
+
+	& > .font-48 {
+		font-weight: 500;
+	}
+
+	@include scss.mobile {
+		padding: 35px;
+		.page-banner-logo {
+			width: 80px;
+		}
+	}
+}

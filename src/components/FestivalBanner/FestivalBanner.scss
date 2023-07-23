@@ -1,0 +1,57 @@
+@use '../../index' as scss;
+
+.festival-banner-container {
+	background-color: scss.$accent-gold;
+	padding: 50px scss.$standard-padding;
+	background-image: url(../../assets/images/rakhi.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position-x: 70%;
+
+	.festival-banner {
+		display: flex;
+		justify-content: space-between;
+		// background-color: scss.$accent-gold;
+
+		.font-32 {
+			color: white;
+			font-weight: 700;
+		}
+		.color-orange {
+			color: scss.$accent-orange;
+		}
+		.font-14 {
+			color: scss.$font-brown;
+		}
+
+		.custom-button {
+			border: none;
+			background-color: scss.$accent-orange;
+			color: white;
+		}
+	}
+
+	@include scss.tablet {
+		background-color: white;
+		padding: scss.$standard-padding-mobile;
+		background-image: none;
+
+		.festival-banner {
+			flex-direction: column;
+			gap: 6px;
+			background-color: scss.$accent-gold;
+			padding: 13px 17px;
+			border-radius: 8px;
+
+			background-image: url(../../assets/images/rakhi.png);
+			background-repeat: no-repeat;
+			background-size: 50%;
+			background-position-x: 120%;
+			background-position-y: bottom;
+
+			.text-container {
+				width: 75%;
+			}
+		}
+	}
+}

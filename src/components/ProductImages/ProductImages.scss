@@ -1,0 +1,77 @@
+@use '../../index.scss' as scss;
+
+.product-images {
+	display: flex;
+	gap: 30px;
+	height: 35vw;
+
+	.other-images {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		overflow: hidden;
+		overflow-y: scroll;
+		gap: 24px;
+		padding-right: 4px;
+
+		@include scss.scrollbars(2px, scss.$font-brown);
+
+		.other-image {
+			width: 80px;
+			min-height: 80px;
+			border-radius: 10px;
+			overflow: hidden;
+
+			img {
+				width: 80px;
+
+				object-fit: cover;
+			}
+		}
+
+		.selected-image {
+			filter: brightness(50%);
+		}
+	}
+	.primary-image {
+		width: 30vw;
+		border-radius: 10px;
+		object-fit: cover;
+	}
+
+	@include scss.tablet {
+		flex-direction: column-reverse;
+		height: unset;
+		width: 100%;
+		gap: 14px;
+
+		.other-images {
+			flex-direction: row;
+			gap: 10px;
+			padding: 0;
+			padding-bottom: 4px;
+			// justify-content: center;
+
+			overflow: hidden;
+			overflow-x: scroll;
+
+			.other-image {
+				min-width: 80px;
+				height: 72px;
+
+				img {
+					width: 80px;
+					object-fit: cover;
+				}
+			}
+		}
+
+		.primary-image {
+			position: relative;
+			right: scss.$standard-padding-mobile;
+			border-radius: 0;
+			width: 100vw;
+			height: 60vw;
+		}
+	}
+}

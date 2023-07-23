@@ -1,0 +1,64 @@
+@use '../../index.scss' as scss;
+
+.cards-container {
+	padding: 100px scss.$standard-padding;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	.font-36 {
+		color: scss.$font-back;
+
+		text-align: center;
+		font-weight: 600;
+		padding-bottom: 12px;
+		border-bottom: 2px solid scss.$accent-gold;
+	}
+
+	.cards {
+		padding: 60px 0;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		overscroll-behavior-x: contain;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		flex-wrap: nowrap;
+		position: relative;
+
+		& > button {
+			position: absolute;
+			top: 40%;
+			z-index: 98;
+		}
+
+		#prev {
+			left: 10px;
+		}
+		#next {
+			transform: rotateY(180deg);
+			right: 10px;
+		}
+	}
+
+	.view-more {
+		display: block;
+		width: max-content;
+		margin: auto;
+		color: scss.$font-brown;
+		padding: 8px;
+		text-decoration: none;
+		border-bottom: 1px solid scss.$font-brown;
+	}
+
+	@include scss.font-breakpoint {
+		padding: 60px 0;
+
+		.cards {
+			overflow: scroll;
+			@include scss.hideScrollbar();
+		}
+	}
+}

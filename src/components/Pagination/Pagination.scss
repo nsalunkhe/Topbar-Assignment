@@ -1,0 +1,61 @@
+@use '../../index.scss' as scss;
+
+.custom-pagination {
+	margin: 0 auto;
+	width: 300px;
+	margin-bottom: 92px;
+
+	.pagination {
+		justify-content: center;
+		display: flex;
+		gap: 14px;
+		padding-left: 0;
+		list-style: none;
+		margin: 0;
+		list-style: none;
+	}
+
+	.page-link {
+		@extend .font-14;
+		position: relative;
+		display: block;
+		padding: 0px 16px;
+		border-radius: 10px;
+		line-height: 40px;
+		color: scss.$font-brown;
+		text-decoration: none;
+		background-color: scss.$accent-yellow-light;
+	}
+
+	a.page-link:hover {
+		background-color: scss.$accent-yellow;
+	}
+
+	.page-item.active {
+		.page-link {
+			background: scss.$accent-yellow;
+		}
+	}
+
+	.page-item.disabled {
+		.page-link {
+			color: #6c757d;
+			pointer-events: none;
+			background-color: transparent;
+			cursor: auto;
+		}
+	}
+
+	@include scss.mobile {
+		margin-bottom: 80px;
+		width: 200px;
+
+		.pagination {
+			gap: 8px;
+		}
+
+		.page-link {
+			padding: 0px 16px;
+		}
+	}
+}
