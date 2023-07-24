@@ -12,6 +12,24 @@ I have added the following Components :
 
 2. CustomerReview: CustomerReview.jsx, CustomerReview.scss
 
+#Installation: 
+
+# Clone the repository
+git clone https://github.com/your-username/your-repo.git
+
+# Navigate to the project directory
+cd your-repo
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev 
+
+h
+
+o
+
 
 Some screenshots of responsiveness
 
